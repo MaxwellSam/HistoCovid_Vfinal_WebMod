@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Histogramme COVID</title>
+        <link rel="stylesheet" href="histo.css"/>
+        <script src="histo.js"></script>
+        <script src="readCSV.js"></script>
+        <script>
+            const dataset1 = {
+                x : ['J', 'F', 'Mr', 'A','M'], 
+                y : [1000, 1250, 2000, 1550, 750] // correspond à h. 
+            };
+            const dataset2 = {
+                x : ['J', 'F'], 
+                y : [1000, 2000]
+            };
+            const dataset3 = {
+                x : ['J', 'F', 'Mr', 'A','M', 'J', 'Jl', 'A'], 
+                y : [1000, 1250, 2000, 1550, 750, 1244, 500, 890] // correspond à h. 
+            };
+            const layout = {
+                mode : 'vertical',    // 'vertical', 'horizontal', 'stacked', 'grouped',
+                width : 800,
+                height : 400,
+                margin : [10, 20, 10, 20],  // N, E, S, W
+                barmargin : [0, 4, 4, 0]
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <h3>Average per month of COVID-19 incidence rate in France since Mai 2020</h3>
+        </header>
+        <section>
+            <div id="graphic"></div>
+        </section>
+        <script>
+        FetchData();
+        </script>
+        <header>
+            <p>
+                <span style="text-decoration: underline;">Note :</span> 
+                <p><strong>incidence rate</strong> corresponds to the number of positive tests per 100,000 inhabitants. It is calculated using the following equation : (100000 * nombre de cas positif) / Population.</p>
+            </p>
+        </header>
+    </body>
+</html>
